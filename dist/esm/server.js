@@ -149,7 +149,7 @@ export class AceBaseServer extends SimpleEventEmitter {
         addWebManagerRoutes(routeEnv);
         // Allow adding custom routes
         this.extend = (method, ext_path, handler) => {
-            const route = `/ext/${db.name}/${ext_path}`;
+            const route = `/${ext_path}`;
             this.debug.log(`Extending server: `, method, route);
             routeEnv.app[method.toLowerCase()](route, handler);
         };
